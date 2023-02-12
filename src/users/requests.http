@@ -4,6 +4,8 @@ Content-Type: application/json
 
 {
   "user": {
-    "name" : "Jonny"
+    "username": "Jonny",
+    "email": "jonny@test.com",
+    "password": "jonnyB"
   }
 }

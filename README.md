@@ -4,6 +4,12 @@
 $ docker compose up -d
 ```
 
+just in case...
+
+```bash
+$ psql -U postgres -h localhost
+```
+
 ## Migrations
 
 ```bash
