@@ -5,9 +5,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TagsModule } from './tags/tags.module';
 import { dataSourceOptions } from '../db/data-source';
+import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(dataSourceOptions), TagsModule],
+  imports: [TypeOrmModule.forRoot(dataSourceOptions), TagsModule, UsersModule],
   controllers: [AppController],
   providers: [AppService],
 })
