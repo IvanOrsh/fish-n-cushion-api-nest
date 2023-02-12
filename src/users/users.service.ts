@@ -2,11 +2,13 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { sign } from 'jsonwebtoken';
+import { compare } from 'bcrypt';
 
 import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './entities/user.entity';
 import { JWT_SECRET } from '../config';
 import { UserResponseInterface } from './types/userResponse.interface';
+import { LoginUserDto } from './dto/login-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -37,6 +39,38 @@ export class UsersService {
     const user = await this.usersRepository.create(createUserDto);
 
     return await this.usersRepository.save(user);
+  }
+
+  async login(loginUserDto: LoginUserDto): Promise<User> {
+    const userByEmail = await this.usersRepository.findOne({
+      where: {
+        email: loginUserDto.email,
+      },
+      select: ['id', 'username', 'email', 'bio', 'image', 'password'],
+    });
+
+    if (!userByEmail) {
+      throw new HttpException(
+        `${loginUserDto.email} not found`,
+        HttpStatus.UNPROCESSABLE_ENTITY,
+      );
+    }
+
+    const isPasswordCorrect = await compare(
+      loginUserDto.password,
+      userByEmail.password,
+    );
+
+    if (!isPasswordCorrect) {
+      throw new HttpException(
+        `Password is not valid`,
+        HttpStatus.UNPROCESSABLE_ENTITY,
+      );
+    }
+
+    delete userByEmail.password;
+
+    return userByEmail;
   }
 
   private generateJwt(user: User): string {

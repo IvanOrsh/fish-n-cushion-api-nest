@@ -4,9 +4,9 @@ Content-Type: application/json
 
 {
   "user": {
-    "username": "Jonny",
-    "email": "jonny@test.com",
-    "password": "jonnyB"
+    "username": "reddy",
+    "email": "reddy@test.com",
+    "password": "reddyB"
   }
 }
 
@@ -43,5 +43,27 @@ Content-Type: application/json
   "user": {
     "email": "jonny@test.com",
     "password": "jonnyB"
+  }
+}
+
+### Login
+POST  http://localhost:3000/users/login
+Content-Type: application/json
+
+{  
+  "user": {
+    "email": "jonny@test.com",
+    "password": "jonnyB"
+  }
+}
+
+### Login with incorrect password
+POST  http://localhost:3000/users/login
+Content-Type: application/json
+
+{  
+  "user": {
+    "email": "jonny@test.com",
+    "password": "babaganush"
   }
 }
