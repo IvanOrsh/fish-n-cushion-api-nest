@@ -68,7 +68,7 @@ export class UsersService {
       );
     }
 
-    delete userByEmail.password;
+    // delete userByEmail.password;
 
     return userByEmail;
   }

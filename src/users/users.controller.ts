@@ -11,9 +11,12 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UserResponseInterface } from './types/userResponse.interface';
 import { UsersService } from './users.service';
 import { LoginUserDto } from './dto/login-user.dto';
+import { Serialize } from '../common/interceptors/serialize-interceptor';
+import { UserResponseDto } from './dto/userResponse.dto';
 
 @ApiTags()
 @Controller()
+@Serialize(UserResponseDto)
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
