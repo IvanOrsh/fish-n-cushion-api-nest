@@ -1,10 +1,22 @@
-# Create user
+### Create user
 POST  http://localhost:3000/users
 Content-Type: application/json
 
 {
   "user": {
     "username": "Jonny",
+    "email": "jonny@test.com",
+    "password": "jonnyB"
+  }
+}
+
+
+### Invalid
+POST  http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "user": {
     "email": "jonny@test.com",
     "password": "jonnyB"
   }
