@@ -4,6 +4,12 @@
 $ docker compose up -d
 ```
 
+## Migrations
+
+```bash
+$ npm run migration:generate -- db/migrations/NewMigration`
+```
+
 ## Installation
 
 ```bash

@@ -1,0 +1,2 @@
+# List all tags
+GET http://localhost:3000/tags

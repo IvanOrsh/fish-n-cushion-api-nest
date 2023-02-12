@@ -4,7 +4,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { TagsModule } from './tags/tags.module';
 import appConfig from './config/app.config';
+import { Tag } from './tags/entities/tag.entity';
 
 @Module({
   imports: [
@@ -16,13 +18,15 @@ import appConfig from './config/app.config';
         username: process.env.DATABASE_USER,
         password: process.env.DATABASE_PASSWORD,
         database: process.env.DATABASE_NAME,
-        autoLoadEntities: true,
+        entities: [Tag],
+        // autoLoadEntities: true,
         synchronize: true, // should be disabled in production
       }),
     }),
     ConfigModule.forRoot({
       load: [appConfig],
     }),
+    TagsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
