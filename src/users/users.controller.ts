@@ -7,7 +7,6 @@ import {
   ValidationPipe,
   UseGuards,
   Patch,
-  Put,
 } from '@nestjs/common';
 
 import { ApiTags } from '@nestjs/swagger';
@@ -23,7 +22,7 @@ import { User } from './entities/user.entity';
 import { AuthGuard } from './guards/auth.guard';
 import { UpdateUserDto } from './dto/update-user.dto';
 
-/*auth logic to be extracted in a separate module/service*/
+/*TODO:auth logic to be extracted in a separate module*/
 
 @ApiTags()
 @Controller()
