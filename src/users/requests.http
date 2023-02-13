@@ -1,14 +1,17 @@
-### Create user
+### Create totally new user
 POST  http://localhost:3000/users
 Content-Type: application/json
 
 {
   "user": {
-    "username": "BoyHarsher",
-    "email": "Gimme@AReason.com",
-    "password": "reddyB"
+    "username": "Tester",
+    "email": "test@testing.com",
+    "password": "qqwwtt"
   }
 }
+
+
+
 
 ### email is taken
 POST  http://localhost:3000/users

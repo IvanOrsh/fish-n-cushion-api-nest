@@ -1,2 +1,13 @@
 ### Create an article
 POST http://localhost:3000/articles
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+
+{
+  "article": {
+    "title": "Have you heard of the high elves?",
+    "description": "Very efficient method of particle size analysis",
+    "body": "mb this should be an url to real body",
+    "tagList": ["reactjs", "angularjs", "nestjs"]
+  }
+}
