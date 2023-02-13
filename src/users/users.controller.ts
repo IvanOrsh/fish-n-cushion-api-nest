@@ -5,7 +5,7 @@ import {
   Controller,
   UsePipes,
   ValidationPipe,
-  NotFoundException,
+  UseGuards,
 } from '@nestjs/common';
 
 import { ApiTags } from '@nestjs/swagger';
@@ -18,6 +18,7 @@ import { Serialize } from '../common/interceptors/serialize-interceptor';
 import { UserResponseDto } from './dto/userResponse.dto';
 import { CurrentUser } from './decorators/user.decorator';
 import { User } from './entities/user.entity';
+import { AuthGuard } from './guards/auth.guard';
 
 /*auth logic to be extracted in a separate module/service*/
 
@@ -46,10 +47,8 @@ export class UsersController {
   }
 
   @Get('user')
+  @UseGuards(AuthGuard)
   async currentUser(@CurrentUser() user: User): Promise<UserResponseInterface> {
-    if (!user) {
-      throw new NotFoundException(`Not logged in`);
-    }
     return this.usersService.buildUserResponse(user);
   }
 }
