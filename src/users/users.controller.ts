@@ -6,6 +6,8 @@ import {
   UsePipes,
   ValidationPipe,
   UseGuards,
+  Patch,
+  Put,
 } from '@nestjs/common';
 
 import { ApiTags } from '@nestjs/swagger';
@@ -19,6 +21,7 @@ import { UserResponseDto } from './dto/userResponse.dto';
 import { CurrentUser } from './decorators/user.decorator';
 import { User } from './entities/user.entity';
 import { AuthGuard } from './guards/auth.guard';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 /*auth logic to be extracted in a separate module/service*/
 
@@ -50,5 +53,15 @@ export class UsersController {
   @UseGuards(AuthGuard)
   async currentUser(@CurrentUser() user: User): Promise<UserResponseInterface> {
     return this.usersService.buildUserResponse(user);
+  }
+
+  @Patch('user')
+  @UseGuards(AuthGuard)
+  async updateCurrentUser(
+    @CurrentUser() user: User,
+    @Body() body: UpdateUserDto,
+  ): Promise<UserResponseInterface> {
+    const updatedUser = await this.usersService.update(user, body);
+    return this.usersService.buildUserResponse(updatedUser);
   }
 }

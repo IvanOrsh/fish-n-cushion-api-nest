@@ -77,6 +77,33 @@ export class UsersService {
     return userByEmail;
   }
 
+  async update(user: User, attrs: Partial<User>): Promise<User> {
+    /*TODO: extract this monstrosity*/
+    if (
+      (attrs.username || attrs.email) &&
+      (user.username !== attrs.username || user.email !== attrs.email)
+    ) {
+      const email = user.email !== attrs.email ? { email: attrs.email } : null;
+      const username =
+        user.username !== attrs.username ? { username: attrs.username } : null;
+      const searchQuery = {
+        where: [email, username],
+      };
+      const userByEmailOrUsername = await this.usersRepository.findOne(
+        searchQuery,
+      );
+
+      if (userByEmailOrUsername) {
+        throw new HttpException(
+          `Email or username are taken`,
+          HttpStatus.UNPROCESSABLE_ENTITY,
+        );
+      }
+    }
+    Object.assign(user, attrs);
+    return await this.usersRepository.save(user);
+  }
+
   private generateJwt(user: User): string {
     return sign(
       {

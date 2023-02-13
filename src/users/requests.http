@@ -74,3 +74,25 @@ GET http://localhost:3000/user
 ### Get current User with auth token
 GET http://localhost:3000/user
 Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJKb25ueSIsImVtYWlsIjoiam9ubnlAdGVzdC5jb20iLCJpYXQiOjE2NzYyODMyMDR9.GBqxmLYFDOMNxWxC2pgGuC3kmHU8DgwkHjOF777cbu4
+
+### Updating Jonny
+PATCH http://localhost:3000/user
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJKb25ueSIsImVtYWlsIjoiam9ubnlAdGVzdC5jb20iLCJpYXQiOjE2NzYyODMyMDR9.GBqxmLYFDOMNxWxC2pgGuC3kmHU8DgwkHjOF777cbu4
+
+{
+  "username": "BananaMan",
+  "bio": "le artist, double le artist",
+  "email": "newEmailForJonny@test.com"
+}
+
+### Jonny is stealing
+PATCH http://localhost:3000/user
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJKb25ueSIsImVtYWlsIjoiam9ubnlAdGVzdC5jb20iLCJpYXQiOjE2NzYyODMyMDR9.GBqxmLYFDOMNxWxC2pgGuC3kmHU8DgwkHjOF777cbu4
+
+{
+  "username": "JonnyB",
+  "bio": "le artist",
+  "email": "reddy@test.com"
+}
