@@ -19,6 +19,8 @@ import { UserResponseDto } from './dto/userResponse.dto';
 import { CurrentUser } from './decorators/user.decorator';
 import { User } from './entities/user.entity';
 
+/*auth logic to be extracted in a separate module/service*/
+
 @ApiTags()
 @Controller()
 @Serialize(UserResponseDto)
