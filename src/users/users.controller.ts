@@ -1,10 +1,14 @@
 import {
+  Get,
+  Post,
   Body,
   Controller,
-  Post,
   UsePipes,
   ValidationPipe,
+  Req,
+  NotFoundException,
 } from '@nestjs/common';
+
 import { ApiTags } from '@nestjs/swagger';
 
 import { CreateUserDto } from './dto/create-user.dto';
@@ -13,6 +17,7 @@ import { UsersService } from './users.service';
 import { LoginUserDto } from './dto/login-user.dto';
 import { Serialize } from '../common/interceptors/serialize-interceptor';
 import { UserResponseDto } from './dto/userResponse.dto';
+import { ExpressRequest } from '../common/types/expressRequest.interface';
 
 @ApiTags()
 @Controller()
@@ -36,5 +41,15 @@ export class UsersController {
   ): Promise<UserResponseInterface> {
     const user = await this.usersService.login(loginUserDto);
     return this.usersService.buildUserResponse(user);
+  }
+
+  @Get('user')
+  async currentUser(
+    @Req() request: ExpressRequest,
+  ): Promise<UserResponseInterface> {
+    if (!request.user) {
+      throw new NotFoundException(`Not logged in`);
+    }
+    return this.usersService.buildUserResponse(request.user);
   }
 }

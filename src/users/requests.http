@@ -67,3 +67,10 @@ Content-Type: application/json
     "password": "babaganush"
   }
 }
+
+### Get current User:
+GET http://localhost:3000/user
+
+### Get current User with auth token
+GET http://localhost:3000/user
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJKb25ueSIsImVtYWlsIjoiam9ubnlAdGVzdC5jb20iLCJpYXQiOjE2NzYyODMyMDR9.GBqxmLYFDOMNxWxC2pgGuC3kmHU8DgwkHjOF777cbu4

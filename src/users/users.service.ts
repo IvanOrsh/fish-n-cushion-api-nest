@@ -41,6 +41,10 @@ export class UsersService {
     return await this.usersRepository.save(user);
   }
 
+  async findById(id: number): Promise<User> {
+    return await this.usersRepository.findOneBy({ id });
+  }
+
   async login(loginUserDto: LoginUserDto): Promise<User> {
     const userByEmail = await this.usersRepository.findOne({
       where: {
