@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import slugify from 'slugify';
 
 import { User } from '../users/entities/user.entity';
 import { CreateArticleDto } from './dto/create-article.dto';
@@ -21,8 +22,22 @@ export class ArticlesService {
     }
 
     article.author = currentUser;
-    article.slug = 'testing';
+    article.slug = this.getSlug(body.title);
 
     return await this.articlesRepository.save(article);
+  }
+
+  buildArticleResponse(article: Artilce) {
+    return {
+      article,
+    };
+  }
+
+  private getSlug(title: string): string {
+    return (
+      slugify(title, { lower: true }) +
+      '-' +
+      ((Math.random() * Math.pow(36, 6)) | 0).toString(36)
+    );
   }
 }
