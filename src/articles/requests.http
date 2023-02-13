@@ -1,0 +1,2 @@
+### Create an article
+POST http://localhost:3000/articles

@@ -12,9 +12,15 @@ import { TagsModule } from './tags/tags.module';
 import { dataSourceOptions } from '../db/data-source';
 import { UsersModule } from './users/users.module';
 import { AuthMiddleware } from './common/middlewares/auth.middleware';
+import { ArticlesModule } from './articles/articles.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(dataSourceOptions), TagsModule, UsersModule],
+  imports: [
+    TypeOrmModule.forRoot(dataSourceOptions),
+    TagsModule,
+    UsersModule,
+    ArticlesModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
