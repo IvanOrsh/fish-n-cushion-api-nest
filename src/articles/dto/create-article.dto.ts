@@ -8,16 +8,16 @@ import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 export class CreateArticleDto {
   @IsNotEmpty()
   @IsString()
-  title: string;
+  readonly title: string;
 
   @IsNotEmpty()
   @IsString()
-  description: string;
+  readonly description: string;
 
   @IsNotEmpty()
   @IsString()
-  body: string;
+  readonly body: string;
 
   @IsOptional()
-  tagList: string[];
+  readonly tagList?: string[];
 }
