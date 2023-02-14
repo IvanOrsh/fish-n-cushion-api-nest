@@ -6,6 +6,11 @@ import {
   Post,
   Delete,
   UseGuards,
+  Patch,
+  HttpException,
+  HttpStatus,
+  UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
 
 import { ArticlesService } from './articles.service';
@@ -16,6 +21,7 @@ import { User } from '../users/entities/user.entity';
 import { ArticleResponseInterface } from './types/articleResponse.interface';
 import { DeleteResult } from 'typeorm';
 import { ApiTags } from '@nestjs/swagger';
+import { UpdateArticleDto } from './dto/update-article.dto';
 
 @ApiTags('articles')
 @Controller('articles')
@@ -24,6 +30,7 @@ export class ArticlesController {
 
   @Post()
   @UseGuards(AuthGuard)
+  @UsePipes(new ValidationPipe())
   async createArtile(
     @CurrentUser() currentUser: User,
     @Body('article') body: CreateArticleDto,
@@ -37,6 +44,14 @@ export class ArticlesController {
     @Param('slug') slug: string,
   ): Promise<ArticleResponseInterface> {
     const article = await this.articlesService.findOne(slug);
+
+    if (!article) {
+      throw new HttpException(
+        `Article with the slug ${slug} does not exist`,
+        HttpStatus.NOT_FOUND,
+      );
+    }
+
     return this.articlesService.buildArticleResponse(article);
   }
 
@@ -47,5 +62,21 @@ export class ArticlesController {
     @Param('slug') slug: string,
   ): Promise<DeleteResult> {
     return await this.articlesService.remove(currentUserId, slug);
+  }
+
+  @Patch(':slug')
+  @UseGuards(AuthGuard)
+  @UsePipes(new ValidationPipe())
+  async updateArticle(
+    @CurrentUser('id') currentUserId: number,
+    @Param('slug') slug: string,
+    @Body('article') body: UpdateArticleDto,
+  ): Promise<ArticleResponseInterface> {
+    const article = await this.articlesService.update(
+      currentUserId,
+      slug,
+      body,
+    );
+    return this.articlesService.buildArticleResponse(article);
   }
 }

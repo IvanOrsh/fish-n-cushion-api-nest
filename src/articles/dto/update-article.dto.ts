@@ -2,18 +2,18 @@
 optional: title, description, body
 */
 
-import { IsOptional, IsString } from 'class-validator';
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class UpdateArticleDto {
-  @IsOptional()
+  @IsNotEmpty()
   @IsString()
-  readonly title?: string;
+  readonly title: string;
 
-  @IsOptional()
+  @IsNotEmpty()
   @IsString()
-  readonly description?: string;
+  readonly description: string;
 
-  @IsOptional()
+  @IsNotEmpty()
   @IsString()
-  readonly body?: string;
+  readonly body: string;
 }

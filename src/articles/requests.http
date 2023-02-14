@@ -26,9 +26,22 @@ Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbW
   }
 }
 
-### Find article by slug
+### Find article by slug (slug invalid)
 GET http://localhost:3000/articles/how-to-make-your-own-water-buffalo-2emecr
 
 ### Delete article by slug
 DELETE http://localhost:3000/articles/annoying-errors-and-typos-s17xnk
 Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+
+### Update article by slug
+PATCH  http://localhost:3000/articles/new-title-testing-stuffs-9b343e
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+
+{
+  "article": {
+    "title": "New Title Testing Stuffs",
+    "description": "some description here",
+    "body": "body of edited article"
+  }
+}

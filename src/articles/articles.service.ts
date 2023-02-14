@@ -57,6 +57,36 @@ export class ArticlesService {
     return await this.articlesRepository.delete({ slug });
   }
 
+  async update(
+    currentUserId: number,
+    slug: string,
+    attrs: Partial<Artilce>,
+  ): Promise<Artilce> {
+    const article = await this.findOne(slug);
+
+    if (!article) {
+      throw new HttpException(
+        `Article with the slug ${slug} does not exist`,
+        HttpStatus.NOT_FOUND,
+      );
+    }
+
+    if (article.author.id !== currentUserId) {
+      throw new HttpException(
+        `You are not an author of this article`,
+        HttpStatus.FORBIDDEN,
+      );
+    }
+
+    if (attrs.title && attrs.title !== article.title) {
+      article.slug = this.getSlug(attrs.title);
+    }
+
+    Object.assign(article, attrs);
+
+    return this.articlesRepository.save(article);
+  }
+
   buildArticleResponse(article: Artilce) {
     return {
       article,
