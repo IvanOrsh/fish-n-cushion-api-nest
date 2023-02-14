@@ -11,14 +11,14 @@ import slugify from 'slugify';
 
 import { User } from '../users/entities/user.entity';
 import { CreateArticleDto } from './dto/create-article.dto';
-import { Artilce } from './entities/article.entity';
+import { Article } from './entities/article.entity';
 import { ArticlesResponseInterface } from './types/articlesResponse.interface';
 
 @Injectable()
 export class ArticlesService {
   constructor(
-    @InjectRepository(Artilce)
-    private readonly articlesRepository: Repository<Artilce>,
+    @InjectRepository(Article)
+    private readonly articlesRepository: Repository<Article>,
     @InjectRepository(User)
     private readonly usersRepository: Repository<User>,
   ) {}
@@ -36,7 +36,7 @@ export class ArticlesService {
     return await this.articlesRepository.save(article);
   }
 
-  async findOne(slug: string): Promise<Artilce> {
+  async findOne(slug: string): Promise<Article> {
     return await this.articlesRepository.findOneBy({ slug });
   }
 
@@ -113,8 +113,8 @@ export class ArticlesService {
   async update(
     currentUserId: number,
     slug: string,
-    attrs: Partial<Artilce>,
-  ): Promise<Artilce> {
+    attrs: Partial<Article>,
+  ): Promise<Article> {
     const article = await this.findOne(slug);
 
     if (!article) {
@@ -140,7 +140,7 @@ export class ArticlesService {
     return this.articlesRepository.save(article);
   }
 
-  buildArticleResponse(article: Artilce) {
+  buildArticleResponse(article: Article) {
     return {
       article,
     };

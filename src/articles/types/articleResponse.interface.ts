@@ -1,5 +1,5 @@
-import { Artilce } from '../entities/article.entity';
+import { Article } from '../entities/article.entity';
 
 export interface ArticleResponseInterface {
-  article: Artilce;
+  article: Article;
 }

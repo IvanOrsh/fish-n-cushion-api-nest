@@ -2,13 +2,15 @@ import {
   BeforeInsert,
   Column,
   Entity,
+  JoinTable,
+  ManyToMany,
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { hash } from 'bcrypt';
 import { ApiProperty } from '@nestjs/swagger';
 
-import { Artilce } from '../../articles/entities/article.entity';
+import { Article } from '../../articles/entities/article.entity';
 
 @Entity({ name: 'users' })
 export class User {
@@ -38,6 +40,10 @@ export class User {
     this.password = await hash(this.password, 10);
   }
 
-  @OneToMany(() => Artilce, (article) => article.author)
-  articles: Artilce[];
+  @OneToMany(() => Article, (article) => article.author)
+  articles: Article[];
+
+  @ManyToMany(() => Article)
+  @JoinTable()
+  favorites: Article[];
 }

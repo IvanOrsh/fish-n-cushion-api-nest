@@ -30,7 +30,9 @@ import { ArticlesResponseInterface } from './types/articlesResponse.interface';
 export class ArticlesController {
   constructor(private readonly articlesService: ArticlesService) {}
 
+  // authentication is optional
   @Get()
+  // @UseGuards(AuthGuard)
   async findAll(
     @CurrentUser('id') currentUserId: number,
     @Query() query: any,
