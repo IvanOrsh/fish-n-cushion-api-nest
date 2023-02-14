@@ -51,7 +51,7 @@ export class ArticlesService {
       .orderBy('articles.createdAt', 'DESC');
 
     //--------------
-    // legal queries: tag, author
+    // legal queries: tag, author, favorite
     if (query.tag) {
       queryBuilder.andWhere('articles.tagList LIKE :tag', {
         tag: `%${query.tag}%`,
@@ -68,6 +68,22 @@ export class ArticlesService {
         id: author.id,
       });
     }
+
+    if (query.favorited) {
+      const author = await this.usersRepository.findOne({
+        where: {
+          username: query.favorited,
+        },
+        relations: ['favorites'],
+      });
+      const ids = author.favorites.map((el) => el.id);
+
+      if (ids.length > 0) {
+        queryBuilder.andWhere('articles.id IN (:...ids)', { ids });
+      } else {
+        queryBuilder.andWhere('1=0');
+      }
+    }
     //--------------
 
     const articlesCount = await queryBuilder.getCount();
@@ -83,9 +99,26 @@ export class ArticlesService {
     }
     //--------------
 
+    //--------------
+    // adding favorite field
+    let favoritedIds: number[] = [];
+    if (currentUserId) {
+      const currentUser = await this.usersRepository.findOne({
+        where: {
+          id: currentUserId,
+        },
+        relations: ['favorites'],
+      });
+      favoritedIds = currentUser.favorites.map((favorite) => favorite.id);
+    }
+
     const articles = await queryBuilder.getMany();
+    const articlesWithFavorited = articles.map((article) => {
+      const favorited = favoritedIds.includes(article.id);
+      return { ...article, favorited };
+    });
     return {
-      articles,
+      articles: articlesWithFavorited,
       articlesCount,
     };
   }

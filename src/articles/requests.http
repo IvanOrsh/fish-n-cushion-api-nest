@@ -150,6 +150,13 @@ Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbW
 ### Find articles by user and tag, no auth
 GET http://localhost:3000/articles?author=Tester&tag=Java
 
+### Find favorited articles
+GET http://localhost:3000/articles?favorited=BananaMan
+
+### Find favorited with auth
+GET http://localhost:3000/articles?favorited=BananaMan
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJCYW5hbmFNYW4iLCJlbWFpbCI6Im5ld0VtYWlsRm9ySm9ubnlAdGVzdC5jb20iLCJpYXQiOjE2NzYzODQyOTR9.GwaReNGQG5aBSdKTwYvGyvSo-etBlWWOlobn5A-v9eY
+
 ### add article to favorites:
 POST http://localhost:3000/articles/new-title-testing-stuffs-9b343e/favorite
 Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJCYW5hbmFNYW4iLCJlbWFpbCI6Im5ld0VtYWlsRm9ySm9ubnlAdGVzdC5jb20iLCJpYXQiOjE2NzYzODQyOTR9.GwaReNGQG5aBSdKTwYvGyvSo-etBlWWOlobn5A-v9eY
