@@ -140,6 +140,7 @@ export class ArticlesService {
     return this.articlesRepository.save(article);
   }
 
+  //TODO: to be refactored
   async addArticleToFavorites(slug: string, userId: number): Promise<Article> {
     const article = await this.findOne(slug);
 
@@ -165,6 +166,41 @@ export class ArticlesService {
     if (isNotFavorited) {
       user.favorites.push(article);
       article.favoritesCount++;
+      await this.usersRepository.save(user);
+      await this.articlesRepository.save(article);
+    }
+
+    return article;
+  }
+
+  //TODO: to be refactored
+  async deleteArticleFromFavorites(
+    slug: string,
+    userId: number,
+  ): Promise<Article> {
+    const article = await this.findOne(slug);
+
+    if (!article) {
+      throw new HttpException(
+        `Article with the slug ${slug} does not exist`,
+        HttpStatus.NOT_FOUND,
+      );
+    }
+
+    const user = await this.usersRepository.findOne({
+      where: {
+        id: userId,
+      },
+      relations: ['favorites'],
+    });
+
+    const articleIndex = user.favorites.findIndex(
+      (articleInFavorites) => articleInFavorites.id === article.id,
+    );
+
+    if (articleIndex >= 0) {
+      user.favorites.splice(articleIndex, 1);
+      article.favoritesCount--;
       await this.usersRepository.save(user);
       await this.articlesRepository.save(article);
     }
