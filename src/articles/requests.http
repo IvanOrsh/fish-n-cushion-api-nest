@@ -25,6 +25,87 @@ Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbW
     "tagList": ["reactjs", "Java", "nuxt"]
   }
 }
+### more articles to play with
+POST http://localhost:3000/articles
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+
+{
+  "article": {
+    "title": "Number Two",
+    "description": "Number Two Article",
+    "body": "yes, number two is deadly",
+    "tagList": ["reactjs", "Java", "nuxt"]
+  }
+}
+### more articles to play with
+POST http://localhost:3000/articles
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+
+{
+  "article": {
+    "title": "Not that easy to understand what you are saying",
+    "description": "randomly generated stuff",
+    "body": "very important body",
+    "tagList": ["reactjs", "Java", "nuxt"]
+  }
+}
+### more articles to play with
+POST http://localhost:3000/articles
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+
+{
+  "article": {
+    "title": "Learing stuffs can't be that hard",
+    "description": "Better way to memorize stuffs",
+    "body": "Learn with Tester",
+    "tagList": ["reactjs", "Devine C", "Temple OS"]
+  }
+}
+
+### more articles to play with
+POST http://localhost:3000/articles
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+
+{
+  "article": {
+    "title": "This is suppose to be a unique article",
+    "description": "Earn big pounds writeing useless articles",
+    "body": "You don't need to know how to write to write",
+    "tagList": ["reactjs", "Posting", "Blogging"]
+  }
+}
+
+### more articles to play with
+POST http://localhost:3000/articles
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+
+{
+  "article": {
+    "title": "Vue for pros",
+    "description": "Be a pro, or go home",
+    "body": "vue for pros",
+    "tagList": ["vue", "nuxt", "random"]
+  }
+}
+
+### more articles to play with (this one is made by bananaman)
+POST http://localhost:3000/articles
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJCYW5hbmFNYW4iLCJlbWFpbCI6Im5ld0VtYWlsRm9ySm9ubnlAdGVzdC5jb20iLCJpYXQiOjE2NzYzODQyOTR9.GwaReNGQG5aBSdKTwYvGyvSo-etBlWWOlobn5A-v9eY
+
+{
+  "article": {
+    "title": "Bananas are good for your memory",
+    "description": "Not really, just making quick bucks",
+    "body": "vue for pros",
+    "tagList": ["svelte", "bananas", "random"]
+  }
+}
 
 ### Find article by slug (slug invalid)
 GET http://localhost:3000/articles/how-to-make-your-own-water-buffalo-2emecr
@@ -45,3 +126,23 @@ Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbW
     "body": "body of edited article"
   }
 }
+
+### Find All articles made by current user
+GET http://localhost:3000/articles
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+
+### Find All with pagination query
+GET http://localhost:3000/articles?limit=2&offset=0
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+
+### Find All with certain tag as a query
+GET http://localhost:3000/articles?tag=Java
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+
+### Find articles made by specified author
+GET http://localhost:3000/articles?author=BananaMan
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJCYW5hbmFNYW4iLCJlbWFpbCI6Im5ld0VtYWlsRm9ySm9ubnlAdGVzdC5jb20iLCJpYXQiOjE2NzYzODQyOTR9.GwaReNGQG5aBSdKTwYvGyvSo-etBlWWOlobn5A-v9eY
+
+### Find articles by user and tag
+GET http://localhost:3000/articles?author=Tester&tag=Java
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJCYW5hbmFNYW4iLCJlbWFpbCI6Im5ld0VtYWlsRm9ySm9ubnlAdGVzdC5jb20iLCJpYXQiOjE2NzYzODQyOTR9.GwaReNGQG5aBSdKTwYvGyvSo-etBlWWOlobn5A-v9eY

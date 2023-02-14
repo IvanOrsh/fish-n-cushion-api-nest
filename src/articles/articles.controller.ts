@@ -11,22 +11,32 @@ import {
   HttpStatus,
   UsePipes,
   ValidationPipe,
+  Query,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
+import { DeleteResult } from 'typeorm';
 
 import { ArticlesService } from './articles.service';
 import { AuthGuard } from '../users/guards/auth.guard';
 import { CurrentUser } from '../users/decorators/user.decorator';
-import { CreateArticleDto } from './dto/create-article.dto';
 import { User } from '../users/entities/user.entity';
-import { ArticleResponseInterface } from './types/articleResponse.interface';
-import { DeleteResult } from 'typeorm';
-import { ApiTags } from '@nestjs/swagger';
+import { CreateArticleDto } from './dto/create-article.dto';
 import { UpdateArticleDto } from './dto/update-article.dto';
+import { ArticleResponseInterface } from './types/articleResponse.interface';
+import { ArticlesResponseInterface } from './types/articlesResponse.interface';
 
 @ApiTags('articles')
 @Controller('articles')
 export class ArticlesController {
   constructor(private readonly articlesService: ArticlesService) {}
+
+  @Get()
+  async findAll(
+    @CurrentUser('id') currentUserId: number,
+    @Query() query: any,
+  ): Promise<ArticlesResponseInterface> {
+    return await this.articlesService.findAll(currentUserId, query);
+  }
 
   @Post()
   @UseGuards(AuthGuard)

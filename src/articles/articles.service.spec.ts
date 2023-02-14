@@ -4,6 +4,7 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 
 import { ArticlesService } from './articles.service';
 import { Artilce } from './entities/article.entity';
+import { User } from '../users/entities/user.entity';
 
 type MockRepository<T = any> = Partial<Record<keyof Repository<T>, jest.Mock>>;
 const createMockRepository = <T = any>(): MockRepository<T> => ({
@@ -19,6 +20,10 @@ describe('ArticlesService', () => {
         ArticlesService,
         {
           provide: getRepositoryToken(Artilce),
+          useValue: createMockRepository(),
+        },
+        {
+          provide: getRepositoryToken(User),
           useValue: createMockRepository(),
         },
       ],
