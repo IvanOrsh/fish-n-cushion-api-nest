@@ -12,5 +12,23 @@ Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbW
   }
 }
 
+### more articles to play with
+POST http://localhost:3000/articles
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+
+{
+  "article": {
+    "title": "Annoying errors and typos",
+    "description": "Just some random stuff",
+    "body": "some reference or something",
+    "tagList": ["reactjs", "Java", "nuxt"]
+  }
+}
+
 ### Find article by slug
 GET http://localhost:3000/articles/how-to-make-your-own-water-buffalo-2emecr
+
+### Delete article by slug
+DELETE http://localhost:3000/articles/annoying-errors-and-typos-s17xnk
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
