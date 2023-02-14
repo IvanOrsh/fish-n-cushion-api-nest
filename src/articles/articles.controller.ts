@@ -15,7 +15,9 @@ import { CreateArticleDto } from './dto/create-article.dto';
 import { User } from '../users/entities/user.entity';
 import { ArticleResponseInterface } from './types/articleResponse.interface';
 import { DeleteResult } from 'typeorm';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('articles')
 @Controller('articles')
 export class ArticlesController {
   constructor(private readonly articlesService: ArticlesService) {}
