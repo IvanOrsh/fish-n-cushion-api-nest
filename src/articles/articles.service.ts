@@ -27,6 +27,10 @@ export class ArticlesService {
     return await this.articlesRepository.save(article);
   }
 
+  async findOne(slug: string): Promise<Artilce> {
+    return await this.articlesRepository.findOneBy({ slug });
+  }
+
   buildArticleResponse(article: Artilce) {
     return {
       article,

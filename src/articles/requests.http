@@ -5,9 +5,12 @@ Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbW
 
 {
   "article": {
-    "title": "Have you heard of the high elves?",
-    "description": "Very efficient method of particle size analysis",
-    "body": "mb this should be an url to real body",
-    "tagList": ["reactjs", "angularjs", "nestjs"]
+    "title": "How to make your own water buffalo",
+    "description": "best article ever",
+    "body": "some reference or something",
+    "tagList": ["reactjs", "angularjs", "nuxt"]
   }
 }
+
+### Find article by slug
+GET http://localhost:3000/articles/how-to-make-your-own-water-buffalo-2emecr
