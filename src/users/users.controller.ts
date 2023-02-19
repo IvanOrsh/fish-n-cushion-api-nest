@@ -24,7 +24,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 
 /*TODO:auth logic to be extracted in a separate module*/
 
-@ApiTags()
+@ApiTags('user/s')
 @Controller()
 @Serialize(UserResponseDto)
 export class UsersController {

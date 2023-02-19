@@ -1,131 +1,48 @@
-### Create an article
+### username "numberTwo" creates article:
 POST http://localhost:3000/articles
 Content-Type: application/json
-Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJOdW1iZXJUd28iLCJlbWFpbCI6Im51bWJlclR3b0BnbWFpbC5jb20iLCJpYXQiOjE2NzY4NDIxMzl9.qfEcut2wy6zIDZZiQGhW7rAq9eayhQDVKEPFRScB2og
 
 {
   "article": {
-    "title": "How to make your own water buffalo",
-    "description": "best article ever",
-    "body": "some reference or something",
-    "tagList": ["reactjs", "angularjs", "nuxt"]
+    "title": "How to create a water buffalo",
+    "description": "numberTwo explains how to...",
+    "body": "lorem X 100",
+    "tagList": ["js", "nodejs"]
   }
 }
 
-### more articles to play with
+### username "numberTwo" creates article:
 POST http://localhost:3000/articles
 Content-Type: application/json
-Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJOdW1iZXJUd28iLCJlbWFpbCI6Im51bWJlclR3b0BnbWFpbC5jb20iLCJpYXQiOjE2NzY4NDIxMzl9.qfEcut2wy6zIDZZiQGhW7rAq9eayhQDVKEPFRScB2og
 
 {
   "article": {
-    "title": "Annoying errors and typos",
-    "description": "Just some random stuff",
-    "body": "some reference or something",
-    "tagList": ["reactjs", "Java", "nuxt"]
+    "title": "Another article by numberTwo",
+    "description": "numberTwo explains how to...",
+    "body": "lorem X 200",
+    "tagList": ["java"]
   }
 }
-### more articles to play with
+
+### username "numberTwo" creates article:
 POST http://localhost:3000/articles
 Content-Type: application/json
-Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJOdW1iZXJUd28iLCJlbWFpbCI6Im51bWJlclR3b0BnbWFpbC5jb20iLCJpYXQiOjE2NzY4NDIxMzl9.qfEcut2wy6zIDZZiQGhW7rAq9eayhQDVKEPFRScB2og
 
 {
   "article": {
-    "title": "Number Two",
-    "description": "Number Two Article",
-    "body": "yes, number two is deadly",
-    "tagList": ["reactjs", "Java", "nuxt"]
-  }
-}
-### more articles to play with
-POST http://localhost:3000/articles
-Content-Type: application/json
-Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
-
-{
-  "article": {
-    "title": "Not that easy to understand what you are saying",
-    "description": "randomly generated stuff",
-    "body": "very important body",
-    "tagList": ["reactjs", "Java", "nuxt"]
-  }
-}
-### more articles to play with
-POST http://localhost:3000/articles
-Content-Type: application/json
-Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
-
-{
-  "article": {
-    "title": "Learing stuffs can't be that hard",
-    "description": "Better way to memorize stuffs",
-    "body": "Learn with Tester",
-    "tagList": ["reactjs", "Devine C", "Temple OS"]
+    "title": "Latest article by numberTwo",
+    "description": "numberTwo explains how to...",
+    "body": "lorem X 300",
+    "tagList": ["js", "reactjs"]
   }
 }
 
-### more articles to play with
-POST http://localhost:3000/articles
-Content-Type: application/json
-Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+### Find article by slug
+GET http://localhost:3000/articles/first-article
 
-{
-  "article": {
-    "title": "This is suppose to be a unique article",
-    "description": "Earn big pounds writeing useless articles",
-    "body": "You don't need to know how to write to write",
-    "tagList": ["reactjs", "Posting", "Blogging"]
-  }
-}
-
-### more articles to play with
-POST http://localhost:3000/articles
-Content-Type: application/json
-Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
-
-{
-  "article": {
-    "title": "Vue for pros",
-    "description": "Be a pro, or go home",
-    "body": "vue for pros",
-    "tagList": ["vue", "nuxt", "random"]
-  }
-}
-
-### more articles to play with (this one is made by bananaman)
-POST http://localhost:3000/articles
-Content-Type: application/json
-Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJCYW5hbmFNYW4iLCJlbWFpbCI6Im5ld0VtYWlsRm9ySm9ubnlAdGVzdC5jb20iLCJpYXQiOjE2NzYzODQyOTR9.GwaReNGQG5aBSdKTwYvGyvSo-etBlWWOlobn5A-v9eY
-
-{
-  "article": {
-    "title": "Bananas are good for your memory",
-    "description": "Not really, just making quick bucks",
-    "body": "vue for pros",
-    "tagList": ["svelte", "bananas", "random"]
-  }
-}
-
-### Find article by slug (slug invalid)
-GET http://localhost:3000/articles/how-to-make-your-own-water-buffalo-2emecr
-
-### Delete article by slug
-DELETE http://localhost:3000/articles/annoying-errors-and-typos-s17xnk
-Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
-
-### Update article by slug
-PATCH  http://localhost:3000/articles/new-title-testing-stuffs-9b343e
-Content-Type: application/json
-Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
-
-{
-  "article": {
-    "title": "New Title Testing Stuffs",
-    "description": "some description here",
-    "body": "body of edited article"
-  }
-}
 
 ### Find All articles made by current user
 GET http://localhost:3000/articles
@@ -133,7 +50,7 @@ Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbW
 
 ### Find All with pagination query
 GET http://localhost:3000/articles?limit=2&offset=0
-Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJUZXN0aW5nVXNlciIsImVtYWlsIjoicXdlcnR5QGdtYWlsLmNvbSIsImlhdCI6MTY3NjgyNDk3Mn0.ySiXkoP8Wx8GbYWna5-6wn0B0TzDq_GBsFhUtlWP1lw
 
 ### Find All with certain tag as a query
 GET http://localhost:3000/articles?tag=Java
@@ -164,3 +81,15 @@ Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbW
 ### remove article from favorites:
 DELETE http://localhost:3000/articles/new-title-testing-stuffs-9b343e/favorite
 Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJCYW5hbmFNYW4iLCJlbWFpbCI6Im5ld0VtYWlsRm9ySm9ubnlAdGVzdC5jb20iLCJpYXQiOjE2NzYzODQyOTR9.GwaReNGQG5aBSdKTwYvGyvSo-etBlWWOlobn5A-v9eY
+
+### Feed
+GET http://localhost:3000/articles/feed/
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJOdW1iZXJUd28iLCJlbWFpbCI6Im51bWJlclR3b0BnbWFpbC5jb20iLCJpYXQiOjE2NzY4NDEyNTR9.QiVfGAGZuoEkOSHZxut10nKY2vHm5AFIlxDKfGHkmHw
+
+### Feed
+GET http://localhost:3000/articles/feed
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJUZXN0aW5nVXNlciIsImVtYWlsIjoicXdlcnR5QGdtYWlsLmNvbSIsImlhdCI6MTY3Njg0MTgzMn0.rvowdEJYXep0zNxCXZAnLfQGB6g0gYPil8h_OAQ2XFw
+
+### Feed with limit
+GET http://localhost:3000/articles/feed?limit=1
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJUZXN0aW5nVXNlciIsImVtYWlsIjoicXdlcnR5QGdtYWlsLmNvbSIsImlhdCI6MTY3Njg0MTgzMn0.rvowdEJYXep0zNxCXZAnLfQGB6g0gYPil8h_OAQ2XFw

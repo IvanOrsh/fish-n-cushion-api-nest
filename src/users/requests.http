@@ -22,45 +22,6 @@ Content-Type: application/json
   }
 }
 
-
-
-
-### email is taken
-POST  http://localhost:3000/users
-Content-Type: application/json
-
-{
-  "user": {
-    "username": "Bobby",
-    "email": "jonny@test.com",
-    "password": "Bobby"
-  }
-}
-
-### username is taken
-POST  http://localhost:3000/users
-Content-Type: application/json
-
-{
-  "user": {
-    "username": "Jonny",
-    "email": "Bobby@test.com",
-    "password": "Bobby"
-  }
-}
-
-
-### Invalid
-POST  http://localhost:3000/users
-Content-Type: application/json
-
-{
-  "user": {
-    "email": "jonny@test.com",
-    "password": "jonnyB"
-  }
-}
-
 ### Login
 POST  http://localhost:3000/users/login
 Content-Type: application/json
@@ -72,14 +33,14 @@ Content-Type: application/json
   }
 }
 
-### Login with incorrect password
+### Login
 POST  http://localhost:3000/users/login
 Content-Type: application/json
 
 {  
   "user": {
-    "email": "jonny@test.com",
-    "password": "babaganush"
+    "email": "numberTwo@gmail.com",
+    "password": "numberTwo"
   }
 }
 

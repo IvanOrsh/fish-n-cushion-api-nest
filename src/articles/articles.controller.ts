@@ -30,7 +30,6 @@ import { ArticlesResponseInterface } from './types/articlesResponse.interface';
 export class ArticlesController {
   constructor(private readonly articlesService: ArticlesService) {}
 
-  // authentication is optional
   @Get()
   // @UseGuards(AuthGuard)
   async findAll(
@@ -38,6 +37,15 @@ export class ArticlesController {
     @Query() query: any,
   ): Promise<ArticlesResponseInterface> {
     return await this.articlesService.findAll(currentUserId, query);
+  }
+
+  @Get('feed')
+  @UseGuards(AuthGuard)
+  async getFeed(
+    @CurrentUser('id') currentUserId: number,
+    @Query() query: any,
+  ): Promise<ArticlesResponseInterface> {
+    return await this.articlesService.getFeed(currentUserId, query);
   }
 
   @Post()
