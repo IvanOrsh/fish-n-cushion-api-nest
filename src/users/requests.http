@@ -10,6 +10,18 @@ Content-Type: application/json
   }
 }
 
+### Create totally new user
+POST  http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "user": {
+    "username": "NumberTwo",
+    "email": "numberTwo@gmail.com",
+    "password": "numberTwo"
+  }
+}
+
 
 
 

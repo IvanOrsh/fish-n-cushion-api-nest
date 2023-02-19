@@ -4,13 +4,19 @@ GET http://localhost:3000/profiles/TestingUser
 ### Profile not found
 GET http://localhost:3000/profiles/ghost
 
-### Get follow
+### follow
+POST http://localhost:3000/profiles/NumberTwo/follow
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJUZXN0aW5nVXNlciIsImVtYWlsIjoicXdlcnR5QGdtYWlsLmNvbSIsImlhdCI6MTY3NjgyNDk3Mn0.ySiXkoP8Wx8GbYWna5-6wn0B0TzDq_GBsFhUtlWP1lw
+
+### follow myself (throw exception)
 POST http://localhost:3000/profiles/TestingUser/follow
 Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJUZXN0aW5nVXNlciIsImVtYWlsIjoicXdlcnR5QGdtYWlsLmNvbSIsImlhdCI6MTY3NjgyNDk3Mn0.ySiXkoP8Wx8GbYWna5-6wn0B0TzDq_GBsFhUtlWP1lw
 
-### Get follow
+### Unfollow
 DELETE  http://localhost:3000/profiles/TestingUser/follow
 Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJUZXN0aW5nVXNlciIsImVtYWlsIjoicXdlcnR5QGdtYWlsLmNvbSIsImlhdCI6MTY3NjgyNDk3Mn0.ySiXkoP8Wx8GbYWna5-6wn0B0TzDq_GBsFhUtlWP1lw
 
 ### 403
 DELETE  http://localhost:3000/profiles/TestingUser/follow
+
+

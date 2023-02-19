@@ -34,8 +34,12 @@ export class ProfilesController {
   async followUser(
     @CurrentUser('id') currentUserId: number,
     @Param('username') profileUsername: string,
-  ) {
-    return 'followed';
+  ): Promise<ProfileResponseInterface> {
+    const followed = await this.profilesService.followProfile(
+      currentUserId,
+      profileUsername,
+    );
+    return this.profilesService.buildProfileResponse(followed);
   }
 
   @Delete(`:username/follow`)
