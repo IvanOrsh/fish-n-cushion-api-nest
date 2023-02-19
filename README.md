@@ -2,6 +2,8 @@
 
 ```bash
 $ docker compose up -d
+
+$ docker compose down
 ```
 
 just in case...
