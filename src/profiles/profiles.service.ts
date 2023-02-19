@@ -32,9 +32,16 @@ export class ProfilesService {
       );
     }
 
+    const follow = await this.followsRepository.findOne({
+      where: {
+        followerId: currentUserId,
+        followingId: user.id,
+      },
+    });
+
     return {
       ...user,
-      following: false,
+      following: Boolean(follow),
     };
   }
 
@@ -79,6 +86,46 @@ export class ProfilesService {
     return {
       ...user,
       following: true,
+    };
+  }
+
+  // TODO: refactor!
+  async unfollowProfile(
+    currentUserId: number,
+    profileUsername: string,
+  ): Promise<ProfileType> {
+    const user = await this.usersRepository.findOneBy({
+      username: profileUsername,
+    });
+
+    if (!user) {
+      throw new HttpException(
+        `Profile with the username ${profileUsername} does not exist`,
+        HttpStatus.NOT_FOUND,
+      );
+    }
+
+    if (currentUserId === user.id) {
+      throw new HttpException(
+        'Follower and Following cannot be equal',
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+
+    const follow = await this.followsRepository.findOne({
+      where: {
+        followerId: currentUserId,
+        followingId: user.id,
+      },
+    });
+
+    if (follow) {
+      await this.followsRepository.delete(follow);
+    }
+
+    return {
+      ...user,
+      following: false,
     };
   }
 

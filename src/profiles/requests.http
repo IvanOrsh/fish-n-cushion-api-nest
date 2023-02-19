@@ -1,5 +1,6 @@
 ### Get profile
-GET http://localhost:3000/profiles/TestingUser
+GET http://localhost:3000/profiles/NumberTwo
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJUZXN0aW5nVXNlciIsImVtYWlsIjoicXdlcnR5QGdtYWlsLmNvbSIsImlhdCI6MTY3NjgyNDk3Mn0.ySiXkoP8Wx8GbYWna5-6wn0B0TzDq_GBsFhUtlWP1lw
 
 ### Profile not found
 GET http://localhost:3000/profiles/ghost
@@ -13,7 +14,7 @@ POST http://localhost:3000/profiles/TestingUser/follow
 Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJUZXN0aW5nVXNlciIsImVtYWlsIjoicXdlcnR5QGdtYWlsLmNvbSIsImlhdCI6MTY3NjgyNDk3Mn0.ySiXkoP8Wx8GbYWna5-6wn0B0TzDq_GBsFhUtlWP1lw
 
 ### Unfollow
-DELETE  http://localhost:3000/profiles/TestingUser/follow
+DELETE  http://localhost:3000/profiles/NumberTwo/follow
 Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJUZXN0aW5nVXNlciIsImVtYWlsIjoicXdlcnR5QGdtYWlsLmNvbSIsImlhdCI6MTY3NjgyNDk3Mn0.ySiXkoP8Wx8GbYWna5-6wn0B0TzDq_GBsFhUtlWP1lw
 
 ### 403
