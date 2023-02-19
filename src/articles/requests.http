@@ -129,7 +129,7 @@ Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbW
 
 ### Find All articles made by current user
 GET http://localhost:3000/articles
-Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRlc3RAdGVzdGluZy5jb20iLCJpYXQiOjE2NzYzMjgyMDN9.xqyPmM20VkxQQbOnLOGgGVKkVrwvOP5hQCYnjXEZnC8
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJUZXN0aW5nVXNlciIsImVtYWlsIjoicXdlcnR5QGdtYWlsLmNvbSIsImlhdCI6MTY3NjgyNDk3Mn0.ySiXkoP8Wx8GbYWna5-6wn0B0TzDq_GBsFhUtlWP1lw
 
 ### Find All with pagination query
 GET http://localhost:3000/articles?limit=2&offset=0

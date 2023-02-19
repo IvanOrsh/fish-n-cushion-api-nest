@@ -55,8 +55,8 @@ Content-Type: application/json
 
 {  
   "user": {
-    "email": "jonny@test.com",
-    "password": "jonnyB"
+    "email": "qwerty@gmail.com",
+    "password": "testingStuffs"
   }
 }
 
@@ -76,7 +76,7 @@ GET http://localhost:3000/user
 
 ### Get current User with auth token
 GET http://localhost:3000/user
-Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJCYW5hbmFNYW4iLCJlbWFpbCI6Im5ld0VtYWlsRm9ySm9ubnlAdGVzdC5jb20iLCJpYXQiOjE2NzYzODQyOTR9.GwaReNGQG5aBSdKTwYvGyvSo-etBlWWOlobn5A-v9eY
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJUZXN0aW5nVXNlciIsImVtYWlsIjoicXdlcnR5QGdtYWlsLmNvbSIsImlhdCI6MTY3NjgyNDk3Mn0.ySiXkoP8Wx8GbYWna5-6wn0B0TzDq_GBsFhUtlWP1lw
 
 ### Updating Jonny
 PATCH http://localhost:3000/user
